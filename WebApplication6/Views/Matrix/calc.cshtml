@@ -1,0 +1,105 @@
+﻿@model  WebApplication6.Model.MatrixView
+
+@{
+    ViewBag.Title = "LessonProject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+@using (Html.BeginForm("calc", "Matrix", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+ 
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label" for="">
+                    M1
+                </label>
+                <div class="controls">
+                
+                    @Html.TextBox("m11", Model.m11)   @Html.TextBox("m12", Model.m12)
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for=" ">
+                    M2
+                </label>
+                <div class="controls">                   
+                    @Html.TextBox("m21", Model.m21) @Html.TextBox("m22", Model.m22)
+                </div>
+            </div>
+
+
+            <div class="control-group">
+                <label class="control-label" for=" ">
+                    M3
+                </label>
+                <div class="controls">
+
+                    @Html.TextBox("m31", Model.m31)   @Html.TextBox("m32", Model.m32)
+                </div>
+            </div>
+
+
+            <div class="control-group">
+                <label class="control-label" for=" ">
+                    M4
+                </label>
+                <div class="controls">
+
+                    @Html.TextBox("m41", Model.m41)   @Html.TextBox("m42", Model.m42)
+                </div>
+            </div>
+
+
+            <div class="control-group">
+                <label class="control-label" for=" ">
+                    M5
+                </label>
+                <div class="controls">
+
+                    @Html.TextBox("m51", Model.m51)   @Html.TextBox("m52", Model.m52)
+                </div>
+            </div>
+
+
+
+            <div class="form-actions">
+                <button type="submit" value="Submit">
+                    in
+                </button>
+
+            </div>
+
+        </fieldset>
+
+
+        <div class="control-group">
+            <label class="control-label" for=" ">
+                RESULTAAAAAAT
+            </label>
+            <div class="controls">
+
+                @Html.TextBox("result", Model.result)    
+            </div>
+        </div>
+
+
+        <div class="control-group">
+            <label class="control-label" for=" ">
+             
+            </label>
+            <div class="controls">
+                  @Html.Raw(Model.result )
+                
+            </div>
+        </div>
+
+
+
+
+
+
+
+}
