@@ -2,7 +2,7 @@
 
 @if (Model != null)
 {
-    <li>@Model.Email</li>
+    <li> @Html.ActionLink(@Model.Email.Trim(), "Logout", "Login")</li>
     <li>@Html.ActionLink("Выход", "Logout", "Login")</li>
 }
 else

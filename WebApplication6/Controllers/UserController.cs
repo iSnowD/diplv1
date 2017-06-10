@@ -42,6 +42,7 @@ namespace WebApplication6.Controllers
 
             if (ModelState.IsValid)
             {
+               var  ModelMapper = new CommonMapper();
                 var user = (User)ModelMapper.Map(userView, typeof(UserView), typeof(User));
 
                 Repository.CreateUser(user);

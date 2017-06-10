@@ -12,11 +12,7 @@ namespace WebApplication6.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using System.Configuration;
-    using WebApplication6.Auth; 
-    using System.Web.Mvc;
-  
- 
-
+    using WebApplication6.Auth;
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
@@ -67,13 +63,16 @@ namespace WebApplication6.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-              kernel.Bind<IMapper>().To<CommonMapper>().InRequestScope();
+             // kernel.Bind<IMapper>().To<CommonMapper>().InSingletonScope();
             kernel.Bind<DataClasses1DataContext>().ToMethod(c => new DataClasses1DataContext(ConfigurationManager.ConnectionStrings["basev1ConnectionString"].ConnectionString));
             kernel.Bind<IRepository>().To<SqlRepository>().InRequestScope();
            
 
             kernel.Bind<IAuthentication>().To<CustomAuthentication>().InRequestScope();
 
-        }        
+        }
+
+        
+
     }
 }

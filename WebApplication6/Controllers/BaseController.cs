@@ -14,8 +14,8 @@ namespace WebApplication6.Controllers
         [Inject]
         public IRepository Repository { get; set; }
 
-        [Inject]
-        public IMapper ModelMapper { get; set; }
+
+        public IMapper ModelMapper;
 
         [Inject]
         public IAuthentication Auth { get; set; }

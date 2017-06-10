@@ -184,6 +184,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MatrixController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DataClasses1.cs">
@@ -201,6 +202,7 @@
     <Compile Include="Mappers\CommonMapper.cs" />
     <Compile Include="Mappers\IMapper.cs" />
     <Compile Include="MatrixChain.cs" />
+    <Compile Include="Models\LoginView.cs" />
     <Compile Include="Models\MatrixView.cs" />
     <Compile Include="Models\UserView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -223,6 +225,7 @@
     <Content Include="Views\Matrix\calc.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Home\UserLogin.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

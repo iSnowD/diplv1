@@ -26,7 +26,7 @@ namespace WebApplication6.Mappers
 
          
         }
-
+     
         public object Map(object source, Type sourceType, Type destinationType)
         {
             return Mapper.Map(source, sourceType, destinationType);
