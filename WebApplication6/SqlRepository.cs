@@ -10,7 +10,7 @@ namespace WebApplication6.Model
     {
         [Inject]
         public DataClasses1DataContext Db { get; set; }
-
+      
 
     }
 }

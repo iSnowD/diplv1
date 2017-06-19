@@ -1,4 +1,22 @@
 ﻿body
 {
-    padding-top : 65px !important;
+    padding-top : 80px !important;
 }
+
+
+
+  .post {
+        margin-bottom: 70px;    
+       
+ 
+    }
+
+   .date {
+        float: right;
+        color: #828282;
+    }
+
+      p{
+          text-align:justify;
+        word-wrap:break-word;
+     }

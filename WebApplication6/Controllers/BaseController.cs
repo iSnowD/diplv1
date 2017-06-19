@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using WebApplication6.Model;
 using Ninject;
 using AutoMapper;
-using WebApplication6.Auth;
+using WebApplication6.Auth; 
 namespace WebApplication6.Controllers
 {
     public abstract class BaseController : Controller

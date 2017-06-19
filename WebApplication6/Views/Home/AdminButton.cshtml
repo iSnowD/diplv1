@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+@model WebApplication6.Model.User
+
+@if (Model != null)
+{
+    if (Model.InRoles("Administrator"))
+    { 
+    <li>@Html.ActionLink("Admin Panel", "AdminPanel", "Home")</li>
+    }
+    else
+    {
+
+    }
+}
+else
+{
+
+}
+
+
+ 

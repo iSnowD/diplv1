@@ -22,7 +22,7 @@ namespace WebApplication6.Models
 
         // [Required(ErrorMessage="Введите email")]
 
-        [ValidEmail(ErrorMessage = "С ИМАИЛОМ ЧОТ Н ЕТАК")]
+        [ValidEmail(ErrorMessage = "Email не корректен")]
         public string Email { get; set; }
 
         [Required(ErrorMessage="Введите пароль")]

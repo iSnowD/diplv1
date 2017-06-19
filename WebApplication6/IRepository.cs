@@ -31,7 +31,7 @@ namespace WebApplication6.Model
         bool UpdateUser(User instance);
 
         bool RemoveUser(int idUser);
-                User GetUser(string email);
+        User GetUser(string email);
         User Login(string email, string password);
         #endregion
 
@@ -45,7 +45,16 @@ namespace WebApplication6.Model
         bool UpdateUserRole(UserRole instance);
 
         bool RemoveUserRole(int idUserRole);
+
         
+        #endregion
+
+
+
+        #region News
+        IQueryable<News> News { get; }
+
+
 
         #endregion
 

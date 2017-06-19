@@ -1,0 +1,39 @@
+﻿ 
+@model IList<WebApplication6.Model.News>
+
+@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ 
+
+    
+        <div class="row">
+            <div class="col-md-8">
+                
+
+                @foreach (var news in Model)
+                { 
+                   <div class="post">
+                 
+
+                    <h1>   @news.Header </h1>
+
+                    <p>
+                        @news.Content
+                    </p>
+                    
+                          <div class="date">
+                              @news.AddedDate
+                          </div>
+                   </div>
+                <hr>
+                    <br />
+                }
+
+
+            </div>
+        </div>
+ 
+ 

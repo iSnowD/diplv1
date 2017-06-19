@@ -1,4 +1,5 @@
-﻿@model  WebApplication6.Models.UserView
+﻿@using System.Web.Optimization;
+@model  WebApplication6.Models.UserView
 
 @{
     ViewBag.Title = "VRUNGEL";
@@ -9,51 +10,55 @@
 @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     @Html.ValidationSummary()
-    <fieldset class="form-group">
+    
+        <fieldset>
 
-        <legend>Регистрация</legend>
+            <legend>Регистрация</legend>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="control-label">
+                        Email
+                    </label>
+
+                    @Html.ValidationMessage("Email")
+                    
+                    @Html.TextBox("Email", Model.Email, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">
+                        Пароль
+                    </label>
+
+                    @Html.ValidationMessage("Password")
+                    @Html.Password("Password", Model.Password, new { @class = "form-control" })
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">
+                        Подтвердите пароль
+                    </label>
+
+                    @Html.ValidationMessage("ConfirmPassword")
+                    @Html.Password("Password", Model.ConfirmPassword, new { @class = "form-control" })
+
+                </div>
 
 
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        Register
+                    </button>
+                    @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn btn-default" })
 
-        <div class="form-group">
-            <label class="control-label" for="Email">
-                Email
-            </label>
-            <div class="controls">
-                @Html.ValidationMessage("Email")
-                @Html.TextBox("Email", Model.Email)
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="FirstName">
-                Пароль
-            </label>
-            <div class="controls">
-                @Html.ValidationMessage("Password")
-                @Html.Password("Password", Model.Password)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label" for="FirstName">
-                Подтвердите пароль
-            </label>
-            <div class="controls">
-                @Html.ValidationMessage("ConfirmPassword")
-                @Html.Password("ConfirmPassword", Model.ConfirmPassword)
-            </div>
-        </div>
+</fieldset>
+   
 
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">
-                Register
-            </button>
-            @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn btn-default" })
-
-        </div>
-
-    </fieldset>
-
-
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

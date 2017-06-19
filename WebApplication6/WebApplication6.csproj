@@ -204,10 +204,12 @@
     <Compile Include="MatrixChain.cs" />
     <Compile Include="Models\LoginView.cs" />
     <Compile Include="Models\MatrixView.cs" />
+    <Compile Include="Models\NewsView.cs" />
     <Compile Include="Models\UserView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy\User.cs" />
     <Compile Include="SqlRepository.cs" />
+    <Compile Include="SqlRepository\News.cs" />
     <Compile Include="SqlRepository\Role.cs" />
     <Compile Include="SqlRepository\User.cs" />
     <Compile Include="SqlRepository\UserRole.cs" />
@@ -226,6 +228,9 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Home\UserLogin.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\AdminButton.cshtml" />
+    <Content Include="Views\Home\Reviews.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

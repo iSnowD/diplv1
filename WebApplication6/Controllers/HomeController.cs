@@ -17,5 +17,26 @@ namespace WebApplication6.Controllers
         {
             return View(CurrentUser);
         }
+
+        public ActionResult News()
+        {
+            var news = Repository.News.ToList();
+          
+            return View(news);
+        }
+
+
+        public ActionResult AdminButton()
+        {
+             
+            return View(CurrentUser);
+        }
+
+        public ActionResult Reviews()
+        {
+
+            return View();
+        }
     }
+
 }
