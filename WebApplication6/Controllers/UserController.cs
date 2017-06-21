@@ -21,9 +21,7 @@ namespace WebApplication6.Controllers
         {
             return View();
         }
-
-
-
+        
         [HttpGet]
         public ActionResult Register()
         {

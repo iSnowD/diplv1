@@ -32,8 +32,12 @@ body
 
       .body-content {
  background-color:white;
- 
+   padding-top : 40px !important;
    min-height: 100%;
 }
 
 
+.inlineblock {
+    float: right;
+      padding-top : -70px !important;
+}

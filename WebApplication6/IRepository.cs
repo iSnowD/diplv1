@@ -53,7 +53,11 @@ namespace WebApplication6.Model
 
         #region News
         IQueryable<News> News { get; }
+        bool CreateNew(News instance);
 
+        bool UpdateNew(News instance);
+
+        bool RemoveNew(int idNewr);
 
 
         #endregion

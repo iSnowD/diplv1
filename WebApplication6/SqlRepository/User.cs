@@ -40,8 +40,7 @@ namespace WebApplication6.Model
             User cache = Db.User.Where(p => p.ID == instance.ID).FirstOrDefault();
             if (cache != null)
             {
-              //  cache.AvatarPath = instance.AvatarPath;
-                cache.Email = instance.Email;
+              
                 Db.User.Context.SubmitChanges();
                 return true;
             }
@@ -53,7 +52,9 @@ namespace WebApplication6.Model
         {
             User instance = Db.User.Where(p => p.ID == idUser).FirstOrDefault();
             if (instance != null)
-            {
+            {   
+
+                
                 Db.User.DeleteOnSubmit(instance);
                 Db.User.Context.SubmitChanges();
                 return true;

@@ -22,6 +22,8 @@ namespace WebApplication6.Controllers
                 var user = Auth.Login(loginView.Email, loginView.Password, loginView.IsPersistent);
                 if (user != null)
                 {
+                    user.LastVisitDate = DateTime.Now;
+                    Repository.UpdateUser(user);
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState["Password"].Errors.Add("Пароли не совпадают");

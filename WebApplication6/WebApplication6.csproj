@@ -181,6 +181,7 @@
     <Compile Include="Auth\IUserProvider.cs" />
     <Compile Include="Auth\UserIndentity.cs" />
     <Compile Include="Auth\UserProvider.cs" />
+    <Compile Include="Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -232,7 +233,10 @@
     <Content Include="Views\Home\AdminButton.cshtml" />
     <Content Include="Views\Home\Reviews.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\AdminPanel.cshtml" />
+    <Content Include="Views\Administration\Index.cshtml" />
+    <Content Include="Views\Administration\UsersEdit.cshtml" />
+    <Content Include="Views\Administration\NewsEdit.cshtml" />
+    <Content Include="Views\Administration\AddNew.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

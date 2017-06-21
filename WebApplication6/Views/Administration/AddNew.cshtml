@@ -1,0 +1,30 @@
+﻿@model  WebApplication6.Model.News
+ 
+<script type="text/javascript" src="/Content/nicEdit-latest.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+            bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+      //]]>
+</script>
+
+   
+    
+        @using (Html.BeginForm("AddNew", "Administration", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            <hr />
+            <h4> Заголовок:  </h4>
+            @Html.TextBox("Header", Model.Header, new { @class = "form-control" })
+            <br /><br />
+
+            <h4> Текст: </h4>
+            <div id="sample">
+
+                @Html.TextAreaFor(model => model.Content, new { style = "width: 100%; height: 120px;" })
+            </div>
+
+
+
+            <input type="submit" width="50" class="btn btn-default" value="отправить" />
+
+        }
+ 

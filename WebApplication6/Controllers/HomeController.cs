@@ -49,7 +49,9 @@ namespace WebApplication6.Controllers
             { 
                 if (CurrentUser.InRoles("Administrator"))
                 {
-                return View();
+                    //  var users = Repository.Users.ToList();
+
+                    return Redirect("/Administration/Index");
                 }
             }
             return Redirect("/Shared/Error");
