@@ -1,11 +1,16 @@
-﻿body
+﻿html, body {
+  height: 100%;
+}
+body
 {
-    padding-top : 80px !important;
+    padding-top : 50px !important;
+    background-color:lightgrey;
 }
 
 
 
   .post {
+    
         margin-bottom: 70px;    
        
  
@@ -19,4 +24,16 @@
       p{
           text-align:justify;
         word-wrap:break-word;
+      text-indent: 1.5em;
      }
+
+
+
+
+      .body-content {
+ background-color:white;
+ 
+   min-height: 100%;
+}
+
+

@@ -231,6 +231,8 @@
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\AdminButton.cshtml" />
     <Content Include="Views\Home\Reviews.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\AdminPanel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

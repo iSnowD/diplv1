@@ -37,6 +37,24 @@ namespace WebApplication6.Controllers
 
             return View();
         }
+
+        public ActionResult About()
+        {
+
+            return View();
+        }
+        public ActionResult AdminPanel()
+        {
+            if (CurrentUser != null)
+            { 
+                if (CurrentUser.InRoles("Administrator"))
+                {
+                return View();
+                }
+            }
+            return Redirect("/Shared/Error");
+
+        }
     }
 
 }
