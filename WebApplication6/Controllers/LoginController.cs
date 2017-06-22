@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using WebApplication6.Models;
 namespace WebApplication6.Controllers
 {
-    public class LoginController : DefaultController
+    public class LoginController : BaseController
     {
         [HttpGet]
         public ActionResult Index()

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using WebApplication6.Model;
 namespace WebApplication6.Controllers
 {
-    public class HomeController : DefaultController
+    public class HomeController : BaseController
     {
         // GET: Home
         public ActionResult Index()
@@ -21,7 +21,7 @@ namespace WebApplication6.Controllers
         public ActionResult News()
         {
             var news = Repository.News.ToList();
-          
+            news.Reverse();
             return View(news);
         }
 

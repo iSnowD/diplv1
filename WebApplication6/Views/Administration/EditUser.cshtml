@@ -1,0 +1,36 @@
+﻿@model  WebApplication6.Model.User
+ @{
+
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+@using (Html.BeginForm("EditUser", "Administration", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <hr />
+            <h4> Редактирование поользователя  </h4>
+            <div class="col-md-5">
+                <fieldset>
+                   
+                        <label class="control-label">
+                            Имя
+                        </label>
+
+                        @Html.TextBox("Name", Model.Name, new { @class = "form-control" })
+                        <label class="control-label">
+                            Фамилия
+                        </label>
+                        @Html.TextBox("LastName", Model.LastName, new { @class = "form-control" })
+                        <label class="control-label">
+                         E-mail
+                        </label>
+                        @Html.TextBox("Email", Model.Email, new { @class = "form-control" })
+                        <label class="control-label">
+                        Дата Рождения
+                        </label>
+                        @Html.TextBox("BirthDate", Model.BirthDate, new { @class = "form-control" })
+
+
+                        <input type="submit" width="50" class="btn btn-default" value="Сохранить" />
+                    </fieldset>
+                    </div>
+                    }

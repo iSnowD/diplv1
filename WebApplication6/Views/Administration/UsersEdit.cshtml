@@ -31,9 +31,10 @@
         <thead class="thead-inverse">
             <tr>
                 <th>#</th>
-                <th>Email</th>
-                <th>Дата регистрации</th>
+                <th>Имя</th>
+                <th>Фамилия </th>
                 <th>Дата последнего посещения</th>
+                <th>Дата  Регистрации</th>
                 <th> </th>
             </tr>
         </thead>
@@ -41,19 +42,23 @@
 
             @foreach (var user in Model)
             {
-                <tr>
-                    <td>@user.ID</td>
-                    <td>@user.Email</td>
-                    <td>@user.AddedDate</td>
-                    <td> @user.LastVisitDate</td>
 
-                    <td>
+
+                <tr>
+                    <td>  @user.ID           </td>
+                    <td > @user.Name         </td>
+                    <td>  @user.LastName     </td>
+                    <td>  @user.LastVisitDate</td>
+                    <td>  @user.AddedDate    </td>
+                    <td align="center" border-right="0">
+                        <input type="button" class="btn btn-default btn-xs" value="редактировать" onclick="location.href='@Url.Action("EditUser", "Administration",new { id = user.ID })'" />
+
                         @using (Html.BeginForm("Deleteuser", "Administration", new { id = user.ID }))
                         {
 
-                            <button class="btn btn-danger btn-xs" type="submit">Удалить</button>
+                            <button class="btn btn-danger btn-xs" type="submit" style="width:100px;">удалить</button>
                         }
-                    </td>
+                          </td>
 
                 </tr>
             }

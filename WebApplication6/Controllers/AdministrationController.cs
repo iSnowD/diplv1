@@ -6,14 +6,14 @@ using System.Web.Mvc;
 using WebApplication6.Model;
 namespace WebApplication6.Controllers
 {
-    public class AdministrationController : DefaultController
+    public class AdministrationController : BaseController
     {
 
 
         public AdministrationController()
         {
 
-          
+
 
 
         }
@@ -35,11 +35,11 @@ namespace WebApplication6.Controllers
 
 
 
-        public ActionResult DeleteUser(int  ID)
+        public ActionResult DeleteUser(int ID)
         {
 
             Repository.RemoveUser(ID);
-           return Redirect("/Administration/UsersEdit");
+            return Redirect("/Administration/UsersEdit");
         }
 
         public ActionResult UsersEdit()
@@ -48,7 +48,7 @@ namespace WebApplication6.Controllers
             {
                 if (CurrentUser.InRoles("Administrator"))
                 {
-                     var users = Repository.Users.ToList();
+                    var users = Repository.Users.ToList();
 
                     return View(users);
                 }
@@ -59,12 +59,13 @@ namespace WebApplication6.Controllers
 
         public ActionResult NewsEdit()
         {
+
             if (CurrentUser != null)
             {
                 if (CurrentUser.InRoles("Administrator"))
                 {
                     var users = Repository.News.ToList();
-
+                    users.Reverse();
                     return View(users);
                 }
             }
@@ -83,7 +84,7 @@ namespace WebApplication6.Controllers
         public ActionResult AddNew()
         {
             var new1 = new News();
-             
+
             return View(new1);
         }
         [ValidateInput(false)]
@@ -104,7 +105,25 @@ namespace WebApplication6.Controllers
             Repository.UpdateNew(cache);
             return Redirect("/Administration/NewsEdit");
         }
-        
 
+     
+
+        [HttpGet]
+        public ActionResult EditUser(int id)
+        {
+            User tmp = Repository.Users.Where(p => p.ID == id).FirstOrDefault();
+
+            return View(tmp);
+
+        }
+
+        [HttpPost]
+        public ActionResult EditUser(User temp)
+        {
+
+            Repository.UpdateUser(temp);
+            return Redirect("/Administration/UsersEdit");
+
+        }
     }
 }

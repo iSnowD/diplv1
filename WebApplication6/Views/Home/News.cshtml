@@ -20,7 +20,9 @@
                 }
 
                 @foreach (var news in Model)
-                { 
+                {
+                    if (news.Hide == true)
+                    {  
                    <div class="post">
                  
 
@@ -36,6 +38,7 @@
                    </div>
                 <hr>
                     <br />
+                    }
                 }
 
 

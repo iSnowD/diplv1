@@ -11,7 +11,7 @@ using WebApplication6.Models;
 namespace WebApplication6.Controllers
 
 {
-    public class UserController : DefaultController
+    public class UserController : BaseController
     {
 
         [Inject]
