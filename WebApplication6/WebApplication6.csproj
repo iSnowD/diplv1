@@ -163,6 +163,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\myapp1.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -203,15 +204,18 @@
     <Compile Include="MatrixChain.cs" />
     <Compile Include="Models\LoginView.cs" />
     <Compile Include="Models\MatrixView.cs" />
-    <Compile Include="Models\NewsView.cs" />
+    <Compile Include="Models\VisitView.cs" />
     <Compile Include="Models\UserView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy\User.cs" />
     <Compile Include="SqlRepository.cs" />
     <Compile Include="SqlRepository\News.cs" />
     <Compile Include="SqlRepository\Role.cs" />
+    <Compile Include="SqlRepository\Times.cs" />
+    <Compile Include="SqlRepository\Services.cs" />
     <Compile Include="SqlRepository\User.cs" />
     <Compile Include="SqlRepository\UserRole.cs" />
+    <Compile Include="SqlRepository\Visits.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -235,6 +239,8 @@
     <Content Include="Views\Administration\NewsEdit.cshtml" />
     <Content Include="Views\Administration\AddNew.cshtml" />
     <Content Include="Views\Administration\EditUser.cshtml" />
+    <Content Include="Views\Administration\Visits.cshtml" />
+    <Content Include="Views\Administration\AddVisit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -62,6 +62,19 @@ namespace WebApplication6.Model
 
         #endregion
 
+        #region Visits
 
+        IQueryable<Visits> Visits { get; }
+
+        bool CreateVisit(Visits instance);
+
+        bool UpdateVisit(Visits instance);
+
+        bool RemoveVisit(int idUser);
+
+        #endregion
+
+        IQueryable<ServiceType> Services { get; }
+        IQueryable<Times> Times { get; }
     }
 }

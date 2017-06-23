@@ -26,7 +26,7 @@ namespace WebApplication6.Controllers
                 {
                     //  var users = Repository.Users.ToList();
 
-                    return View();
+                    return Redirect("/Administration/Visits");
                 }
             }
             return Redirect("/Shared/Error");
@@ -122,8 +122,63 @@ namespace WebApplication6.Controllers
         {
 
             Repository.UpdateUser(temp);
+           
             return Redirect("/Administration/UsersEdit");
 
+        }
+
+
+
+
+        public ActionResult Visits()
+        {
+            if (CurrentUser != null)
+            {
+                if (CurrentUser.InRoles("Administrator"))
+                {
+                    var visits = Repository.Visits.ToList();
+
+                    return View(visits);
+                }
+            }
+            return Redirect("/Shared/Error");
+        }
+
+        public ActionResult Visitscheck(int id)
+        {
+            Visits cache = Repository.Visits.Where(p => p.ID == id).FirstOrDefault();
+            if (cache.IsVisited == false) cache.IsVisited = true;
+            else cache.IsVisited = false;
+            Repository.UpdateVisit(cache);         
+            return Redirect("/Administration/Visits");
+        }
+
+ 
+ 
+
+
+        public ActionResult AddVisit()
+        {
+            //  ) Set your data to a List()
+            //2) Set the data - list to a ViewBag object (ViewBag.datalist = myData;)
+            //3) Create your dropdown: @Html.DropDownList("MyDataList", new SelectList(ViewBag.datalist, "ValueColumn", "TextDisplayColumn"))
+            var users = Repository.Users.ToList();
+            ViewBag.datalist = users;
+            var services = Repository.Services.ToList();
+            ViewBag.servicelist = services;
+
+            var times = Repository.Times.ToList();
+            ViewBag.timeslist = times;
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddVisit(Visits visit)
+        {
+
+            Repository.CreateVisit(visit);
+
+            return Redirect("/Administration/Visits");
         }
     }
 }

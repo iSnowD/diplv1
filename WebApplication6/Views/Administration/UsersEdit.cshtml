@@ -4,7 +4,6 @@
 }
 @model IList<WebApplication6.Model.User>
 
-
 <div class="col-md-2  col-md-pull-2">
     <div class="list-group">
         <a href="#" class="list-group-item active">
@@ -16,7 +15,9 @@
         <div class="list-group-item">
             @Html.ActionLink("Новости", "NewsEdit", "Administration")
         </div>
-        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+        <div class="list-group-item">
+            @Html.ActionLink("Посещения", "Visits", "Administration")
+        </div>
         <a href="#" class="list-group-item">Vestibulum at eros</a>
     </div>
 </div>
@@ -31,8 +32,7 @@
         <thead class="thead-inverse">
             <tr>
                 <th>#</th>
-                <th>Имя</th>
-                <th>Фамилия </th>
+                <th>ФИО</th>               
                 <th>Дата последнего посещения</th>
                 <th>Дата  Регистрации</th>
                 <th> </th>
@@ -47,7 +47,7 @@
                 <tr>
                     <td>  @user.ID           </td>
                     <td > @user.Name         </td>
-                    <td>  @user.LastName     </td>
+                   
                     <td>  @user.LastVisitDate</td>
                     <td>  @user.AddedDate    </td>
                     <td align="center" border-right="0">

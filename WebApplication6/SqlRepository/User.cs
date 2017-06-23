@@ -40,7 +40,9 @@ namespace WebApplication6.Model
             User cache = Db.User.Where(p => p.ID == instance.ID).FirstOrDefault();
             if (cache != null)
             {
-              
+                cache.Name = instance.Name;
+                cache.Email = instance.Email;
+                cache.BirthDate = instance.BirthDate;
                 Db.User.Context.SubmitChanges();
                 return true;
             }

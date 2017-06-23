@@ -1,0 +1,60 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model  WebApplication6.Model.Visits
+
+<div class="col-md-2  col-md-pull-2">
+    <div class="list-group">
+        <a href="#" class="list-group-item active">
+            Меню
+        </a>
+        <div class="list-group-item">
+            @Html.ActionLink("Пользоватеи", "UsersEdit", "Administration")
+        </div>
+        <div class="list-group-item">
+            @Html.ActionLink("Новости", "NewsEdit", "Administration")
+        </div>
+        <div class="list-group-item">
+            @Html.ActionLink("Посещения", "Visits", "Administration")
+        </div>
+        <a href="#" class="list-group-item">Vestibulum at eros</a>
+    </div>
+</div>
+
+@using (Html.BeginForm("AddVisit", "Administration", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+   // IRepository Repository = new SqlRepository();
+  //  var users = Repository.Users.ToList();
+        <hr />
+        <h4> Добавить запись  </h4>
+        <div class="col-md-5">
+            <fieldset>
+
+                <label class="control-label">
+                    Пользователь
+                </label>
+
+                @Html.DropDownList("UserID", new SelectList(ViewBag.datalist, "ID", "Name"), new { @class = "form-control" })  
+                <label class="control-label">
+                   Тип услуги
+                </label>
+                @Html.DropDownList("ServiceID", new SelectList(ViewBag.servicelist, "ID", "Type"), new { @class = "form-control" })  
+                <label class="control-label">
+                    Дата
+                </label>
+                @Html.TextBox("Date", "", new { @class = "form-control" })
+                <label class="control-label">
+                    Время
+                </label>
+                @Html.DropDownList("TimeID", new SelectList(ViewBag.timeslist, "ID", "Time"), new { @class = "form-control" })
+                <label class="control-label">
+                    Примечание
+                </label>
+                @Html.TextArea("Note", "", new { @class = "form-control" })
+  
+                <br />
+                <input type="submit" width="50" class="btn btn-default " value="Сохранить" />
+            </fieldset>
+        </div>
+        }
